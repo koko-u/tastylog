@@ -1,6 +1,7 @@
 const nodeExternals = require('webpack-node-externals')
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const BUILD_ROOT = path.resolve(__dirname, '../dist')
 const SRC_ROOT = path.resolve(__dirname, '../src')
@@ -18,13 +19,19 @@ const typescriptRule = {
   ],
 }
 
+const copyPluginOptions = {
+  patterns: [{ from: path.resolve(__dirname, '../src/views'), to: 'views' }],
+}
+
 module.exports = {
   context: SRC_ROOT,
   entry: path.resolve('src', 'index.ts'),
+  target: 'node',
   externals: [nodeExternals()],
   output: {
     filename: 'server.js',
     path: BUILD_ROOT,
+    clean: true,
   },
   module: {
     rules: [typescriptRule],
@@ -32,5 +39,5 @@ module.exports = {
   resolve: {
     extensions: ['.ts', 'js', '.json'],
   },
-  plugins: [new Dotenv()],
+  plugins: [new Dotenv(), new CopyPlugin(copyPluginOptions)],
 }

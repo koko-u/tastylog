@@ -1,21 +1,15 @@
 import express from 'express'
 import * as dotenv from 'dotenv'
+import { router } from './routes'
+import { resolve } from 'path'
 
 dotenv.config()
 
 const PORT = process.env.PORT ?? 3000
 const app = express()
-const router = express.Router()
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
-router.get(
-  '/',
-  async (req: express.Request, res: express.Response): Promise<void> => {
-    res.send('Hello World')
-  },
-)
+app.set('views', resolve(__dirname, 'views'))
+app.set('view engine', 'ejs')
 app.use('/', router)
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
