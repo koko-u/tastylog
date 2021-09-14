@@ -20,7 +20,10 @@ const typescriptRule = {
 }
 
 const copyPluginOptions = {
-  patterns: [{ from: path.resolve(__dirname, '../src/views'), to: 'views' }],
+  patterns: [
+    { from: path.resolve(__dirname, '../src/views'), to: 'views' },
+    { from: path.resolve(__dirname, '../src/public'), to: 'public' },
+  ],
 }
 
 module.exports = {
