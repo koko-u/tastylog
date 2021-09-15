@@ -1,14 +1,11 @@
 import express from 'express'
-import * as dotenv from 'dotenv'
 import { router } from './routes'
 import path from 'path'
 import favicon from 'serve-favicon'
 import expressEjsLayouts from 'express-ejs-layouts'
-import logger from './logger'
+import { logger } from './logger'
+import { env } from './config/env'
 
-dotenv.config()
-
-const PORT = process.env.PORT ?? 3000
 const app = express()
 
 app.disable('x-powered-by')
@@ -24,4 +21,4 @@ app.use('/public', express.static(path.resolve(__dirname, 'public')))
 
 app.use('/', router)
 
-app.listen(PORT, () => logger.info(`listening on port ${PORT}`))
+app.listen(env.port, () => logger.info(`listening on port ${env.port}`))
