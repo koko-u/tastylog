@@ -4,6 +4,7 @@ import { router } from './routes'
 import path from 'path'
 import favicon from 'serve-favicon'
 import expressEjsLayouts from 'express-ejs-layouts'
+import logger from './logger'
 
 dotenv.config()
 
@@ -23,4 +24,4 @@ app.use('/public', express.static(path.resolve(__dirname, 'public')))
 
 app.use('/', router)
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`))
+app.listen(PORT, () => logger.info(`listening on port ${PORT}`))
