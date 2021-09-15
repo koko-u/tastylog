@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="/public/stylesheets/common.css">
 </head>
 <body>
-<%- include('../shared/navbar.ejs') %>
-<%- body %>
+<div class="outerframe">
+    <%- include('../shared/navbar.ejs') %>
+    <%- body %>
+    <%- include('../shared/footer.ejs') %>
+</div>
 </body>
 </html>
