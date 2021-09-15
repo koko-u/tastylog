@@ -248,6 +248,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/express-ejs-layouts@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "@types/express-ejs-layouts@npm:2.5.0"
+  dependencies:
+    "@types/express": "*"
+    "@types/node": "*"
+  checksum: e2c8dae050da14266ec978fc43dc0cf611810cdf2f82f8b16f915bf145bc68c6c619b3885aae884b1bb7428ea21f6c68d9bd002bde1fb5f207ab924479034a1d
+  languageName: node
+  linkType: hard
+
 "@types/express-serve-static-core@npm:^4.17.18":
   version: 4.17.24
   resolution: "@types/express-serve-static-core@npm:4.17.24"
@@ -1823,6 +1833,13 @@ __metadata:
     signal-exit: ^3.0.3
     strip-final-newline: ^2.0.0
   checksum: fba9022c8c8c15ed862847e94c252b3d946036d7547af310e344a527e59021fd8b6bb0723883ea87044dc4f0201f949046993124a42ccb0855cae5bf8c786343
+  languageName: node
+  linkType: hard
+
+"express-ejs-layouts@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "express-ejs-layouts@npm:2.5.1"
+  checksum: 71535d3d61d41cee21ac3e75c793578a12614abad3b778eb43f0be47abbd73ad7cd659ae370b21d2c2556690a7ec80f492d2077685efcc37e2b80240b9608ff7
   languageName: node
   linkType: hard
 
@@ -4090,6 +4107,7 @@ resolve@^1.9.0:
   dependencies:
     "@types/ejs": ^3.1.0
     "@types/express": ^4.17.13
+    "@types/express-ejs-layouts": ^2.5.0
     "@types/serve-favicon": ^2.5.3
     "@typescript-eslint/eslint-plugin": ^4.31.0
     "@typescript-eslint/parser": ^4.31.0
@@ -4100,6 +4118,7 @@ resolve@^1.9.0:
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     express: ^4.17.1
+    express-ejs-layouts: ^2.5.1
     nodemon: ^2.0.12
     prettier: ^2.4.0
     serve-favicon: ^2.5.0

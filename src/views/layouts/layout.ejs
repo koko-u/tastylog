@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+
+    <%- include('../shared/bootstrapcss.ejs') %>
+    <%- include('../shared/fontawesomekit.ejs') %>
+    <link rel="stylesheet" href="/public/stylesheets/common.css">
+    <% if (name === 'index') { %>
+        <link rel="stylesheet" href="/public/stylesheets/index.css">
+    <% } %>
+</head>
+<body>
+<div class="outerframe">
+    <%- include('../shared/navbar.ejs') %>
+    <%- body %>
+    <%- include('../shared/footer.ejs') %>
+</div>
+</body>
+</html>
