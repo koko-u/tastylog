@@ -10,6 +10,8 @@ dotenv.config()
 const PORT = process.env.PORT ?? 3000
 const app = express()
 
+app.disable('x-powered-by')
+
 app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
