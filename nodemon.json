@@ -1,7 +1,8 @@
 {
   "restartable": "rs",
   "env": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "LOG_ROOT_DIR": "/home/kozaki/js-projects/nodejs+mysql/tastylog"
   },
   "watch": [
     "src"
