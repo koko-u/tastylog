@@ -4,10 +4,18 @@ import { env } from '../config/env'
 
 log4js.configure(config)
 
-export const logger = log4js.getLogger()
+const consoleLogger = log4js.getLogger()
+const applicationLogger = log4js.getLogger('application')
 
 if (env.mode === 'development') {
-  logger.level = 'DEBUG'
+  consoleLogger.level = 'DEBUG'
+  applicationLogger.level = 'DEBUG'
 } else if (env.mode === 'production') {
-  logger.level = 'INFO'
+  consoleLogger.level = 'INFO'
+  applicationLogger.level = 'INFO'
+}
+
+export const logger = {
+  console: consoleLogger,
+  application: applicationLogger,
 }
