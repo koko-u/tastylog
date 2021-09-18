@@ -13,8 +13,8 @@
     "dev": "nodemon -L",
     "build:dev": "NODE_ENV=development webpack --config ./webpack/development.config.js",
     "build": "NODE_ENV=production webpack --config ./webpack/production.config.js",
-    "start:dev": "yarn build:dev && node dist/server.js",
-    "start": "yarn build && node dist/server.js"
+    "start:dev": "yarn build:dev && node -r dotenv/config dist/server.js",
+    "start": "yarn build && node -r dotenv/config dist/server.js"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
