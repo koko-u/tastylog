@@ -21,6 +21,9 @@ app.set('layout', path.join(__dirname, 'views', 'layouts', 'layout'))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use('/public', express.static(path.resolve(__dirname, 'public')))
 
+app.use(express.json())
+app.use(express.urlencoded())
+
 app.use(requestLogger())
 app.use('/', router)
 app.use(errorLogger())

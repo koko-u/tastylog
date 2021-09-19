@@ -19,3 +19,5 @@ export const logger = {
   console: consoleLogger,
   application: applicationLogger,
 }
+
+process.once('SIGTERM', log4js.shutdown)
